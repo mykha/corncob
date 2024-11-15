@@ -91,6 +91,8 @@ CREATE TABLE IF NOT EXISTS  unit(
 	unit_name  VARCHAR(150),
 	full_name  VARCHAR(255)
 );
+ALTER TABLE unit
+ADD COLUMN IF NOT EXISTS contact_person_id INTEGER REFERENCES person(id);
 
 CREATE TABLE IF NOT EXISTS  life_cycle (
     action_date TIMESTAMP,
